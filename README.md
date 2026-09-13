@@ -2,5 +2,5 @@
 Add-ons for SuperTux, including:
 
 - New enemies
-- New powerups
+- New power-ups
 - New primitives
