@@ -10,6 +10,7 @@ This repository is the holding place for all SuperTux addons and mods we build o
 
 - Run `.venv/bin/python -m unittest discover -s tests` from the repo root for the full manifest, asset inventory, and sprite-reference checks.
 - Run `./test_magnatux.sh` for the local preflight; it prefers the repo venv when available and also checks the downloaded SuperTux source checkout at `/Users/brian/Documents/Projects/SuperTux-v0.7.0-Source` when present.
+- Run `./run_supertux_local.sh` when you want to validate MagnaTux and then launch SuperTux for map-editor testing; it expects a source-built binary first and only tries the copied app bundle if you set `SUPERTUX_ALLOW_APP_BUNDLE=1`.
 
 ## Active Expansion
 
