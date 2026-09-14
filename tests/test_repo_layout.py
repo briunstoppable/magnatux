@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import os
 import re
 import unittest
 from pathlib import Path
@@ -12,7 +13,12 @@ except ImportError:  # pragma: no cover - environment dependent
 
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
-SUPERTUX_SOURCE_ROOT = Path("/Users/brian/Documents/Projects/SuperTux-v0.7.0-Source")
+SUPERTUX_SOURCE_ROOT = Path(
+    os.environ.get(
+        "SUPERTUX_SOURCE_ROOT",
+        str(Path.home() / "SuperTux-v0.7.0-Source"),
+    )
+)
 SPRITE_IMAGE_BLOCK_PATTERN = re.compile(r'\(images(?P<body>.*?)\)', re.DOTALL)
 DISALLOWED_ROOT_SUFFIXES = {".sprite", ".png", ".jpg", ".jpeg", ".webp"}
 IMAGE_SUFFIXES = {".png", ".jpg", ".jpeg", ".webp"}
@@ -81,7 +87,9 @@ class RepoLayoutTests(unittest.TestCase):
         self.assertEqual(roots["looping-animation-template"]["sprite"], "effects/looping_animation.sprite")
 
     def test_super_tux_source_checkout_looks_valid(self) -> None:
-        self.assertTrue(SUPERTUX_SOURCE_ROOT.exists(), f"missing SuperTux source checkout: {SUPERTUX_SOURCE_ROOT}")
+        if not SUPERTUX_SOURCE_ROOT.exists():
+            self.skipTest(f"SuperTux source checkout not present: {SUPERTUX_SOURCE_ROOT}")
+
         self.assertTrue((SUPERTUX_SOURCE_ROOT / "CMakeLists.txt").exists())
         self.assertTrue((SUPERTUX_SOURCE_ROOT / "src").is_dir())
         self.assertTrue((SUPERTUX_SOURCE_ROOT / "data").is_dir())
