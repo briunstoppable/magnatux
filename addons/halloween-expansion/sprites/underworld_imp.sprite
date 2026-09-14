@@ -3,20 +3,29 @@
     (name "taunt-run")
     (fps 8)
     (hitbox 2 4 28 32)
-    (images "../art/enemies/underworld_imp_sheet.jpg")
+    (images
+      "../art/enemies/underworld_imp/frames/taunt-0.png"
+      "../art/enemies/underworld_imp/frames/taunt-1.png"
+    )
   )
 
   (action
     (name "leap-dive")
     (fps 8)
     (hitbox 2 4 28 32)
-    (images "../art/enemies/underworld_imp_sheet.jpg")
+    (images
+      "../art/enemies/underworld_imp/frames/leap-0.png"
+      "../art/enemies/underworld_imp/frames/leap-1.png"
+    )
   )
 
   (action
     (name "defeated")
     (fps 0)
     (hitbox 2 4 28 32)
-    (images "../art/enemies/underworld_imp_sheet.jpg")
+    (images
+      "../art/enemies/underworld_imp/frames/defeated-0.png"
+      "../art/enemies/underworld_imp/frames/defeated-1.png"
+    )
   )
 )

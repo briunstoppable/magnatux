@@ -3,34 +3,43 @@
     (name "phase1-hanging")
     (fps 6)
     (hitbox 8 8 64 64)
-    (images "../art/bosses/arachnia_boss_sheet.jpg")
+    (images
+      "../art/bosses/arachnia/frames/hang-0.png"
+      "../art/bosses/arachnia/frames/hang-1.png"
+    )
   )
 
   (action
     (name "phase1-rearing")
     (fps 6)
     (hitbox 8 8 64 64)
-    (images "../art/bosses/arachnia_boss_sheet.jpg")
+    (images
+      "../art/bosses/arachnia/frames/rearing-0.png"
+      "../art/bosses/arachnia/frames/rearing-1.png"
+    )
   )
 
   (action
     (name "phase2-lunge")
     (fps 8)
     (hitbox 8 8 64 64)
-    (images "../art/bosses/arachnia_boss_sheet.jpg")
+    (images
+      "../art/bosses/arachnia/frames/lunge-0.png"
+      "../art/bosses/arachnia/frames/lunge-1.png"
+    )
   )
 
   (action
     (name "phase2-slam")
     (fps 0)
     (hitbox 8 8 64 64)
-    (images "../art/bosses/arachnia_boss_sheet.jpg")
+    (images "../art/bosses/arachnia/frames/slam-0.png")
   )
 
   (action
     (name "defeated")
     (fps 0)
     (hitbox 8 8 64 64)
-    (images "../art/bosses/arachnia_boss_sheet.jpg")
+    (images "../art/bosses/arachnia/frames/defeated-0.png")
   )
 )

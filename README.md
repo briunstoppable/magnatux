@@ -6,6 +6,15 @@ Add Ons for SuperTux
 
 This repository is the clean, Linux-first home for SuperTux addons and mods we build over time.
 
+## Environment requirements
+
+This project expects a Python environment with Pillow installed for image validation and tileset generation.
+
+- Create or reuse the repo venv: `python3 -m venv .venv`
+- Activate it: `source .venv/bin/activate`
+- Install dependencies: `python -m pip install -r requirements.txt`
+- If you are not using the repo venv, make sure `Pillow` is available in the interpreter you run the validation scripts with.
+
 ## Verification
 
 - Run `.venv/bin/python -m unittest discover -s tests` from the repo root for the full manifest, asset inventory, and sprite-reference checks.

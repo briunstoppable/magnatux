@@ -3,20 +3,26 @@
     (name "ceiling_hang")
     (fps 6)
     (hitbox 2 2 28 28)
-    (images "../art/enemies/phantom_bat_sheet.jpg")
+    (images
+      "../art/enemies/phantom_bat/frames/hang-0.png"
+      "../art/enemies/phantom_bat/frames/hang-1.png"
+    )
   )
 
   (action
     (name "swoop")
     (fps 8)
     (hitbox 2 2 28 28)
-    (images "../art/enemies/phantom_bat_sheet.jpg")
+    (images
+      "../art/enemies/phantom_bat/frames/swoop-0.png"
+      "../art/enemies/phantom_bat/frames/swoop-1.png"
+    )
   )
 
   (action
     (name "defeated")
     (fps 0)
     (hitbox 2 2 28 28)
-    (images "../art/enemies/phantom_bat_sheet.jpg")
+    (images "../art/enemies/phantom_bat/frames/defeated.png")
   )
 )

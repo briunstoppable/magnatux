@@ -3,6 +3,9 @@
     (name "orbit")
     (fps 6)
     (hitbox 4 4 24 32)
-    (images "../art/enemies/wailing_phantoms_sheet.jpg")
+    (images
+      "../art/enemies/wailing_phantoms/frames/green-0.png"
+      "../art/enemies/wailing_phantoms/frames/green-1.png"
+    )
   )
 )

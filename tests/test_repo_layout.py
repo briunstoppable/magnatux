@@ -3,6 +3,8 @@ from __future__ import annotations
 import json
 import os
 import re
+import subprocess
+import sys
 import unittest
 from pathlib import Path
 
@@ -290,6 +292,31 @@ class RepoLayoutTests(unittest.TestCase):
             self.assertEqual(content.count("("), content.count(")"), f"unbalanced parentheses in {sprite_path.name}")
             self.assertGreaterEqual(content.count("(action"), 1, f"{sprite_path.name} needs at least one action")
 
+    def test_halloween_expansion_enemies_use_frame_pngs(self) -> None:
+        expected_frame_roots = {
+            "phantom_bat": REPO_ROOT / "addons" / "halloween-expansion" / "art" / "enemies" / "phantom_bat" / "frames",
+            "underworld_imp": REPO_ROOT / "addons" / "halloween-expansion" / "art" / "enemies" / "underworld_imp" / "frames",
+            "webweaver": REPO_ROOT / "addons" / "halloween-expansion" / "art" / "enemies" / "webweaver" / "frames",
+            "wailing_phantoms": REPO_ROOT / "addons" / "halloween-expansion" / "art" / "enemies" / "wailing_phantoms" / "frames",
+            "arachnia": REPO_ROOT / "addons" / "halloween-expansion" / "art" / "bosses" / "arachnia" / "frames",
+        }
+
+        for key, frame_root in expected_frame_roots.items():
+            self.assertTrue(frame_root.exists(), f"missing frame root for {key}: {frame_root}")
+            self.assertGreater(len(list(frame_root.glob("*.png"))), 0, f"no frame PNGs found in {frame_root}")
+
+        for sprite_path in sorted((REPO_ROOT / "addons" / "halloween-expansion" / "sprites").glob("*.sprite")):
+            refs = self._sprite_image_refs(sprite_path)
+            if not refs:
+                continue
+            for ref in refs:
+                resolved = (sprite_path.parent / ref).resolve()
+                self.assertTrue(resolved.exists(), f"missing sprite frame in {sprite_path.name}: {ref}")
+                if "/frames/" in resolved.as_posix():
+                    self.assertTrue(resolved.suffix.lower() == ".png", f"non-PNG sprite frame in {sprite_path.name}: {ref}")
+                else:
+                    self.assertIn(resolved.suffix.lower(), {".jpg", ".jpeg", ".png"}, f"unsupported sprite asset in {sprite_path.name}: {ref}")
+
     def test_halloween_expansion_sprite_inventory_is_complete(self) -> None:
         expansion_root = REPO_ROOT / "addons" / "halloween-expansion" / "sprites"
         self.assertEqual(
@@ -359,6 +386,31 @@ class RepoLayoutTests(unittest.TestCase):
 
         missing = sorted(str(path.relative_to(REPO_ROOT)) for path in expected_files if not path.exists())
         self.assertEqual(missing, [], f"missing halloween expansion assets: {missing}")
+
+    def test_generate_tileset_creates_halloween_tileset_asset(self) -> None:
+        if Image is None:
+            self.skipTest("Pillow is not installed in this Python environment")
+
+        script_path = REPO_ROOT / "generate_tileset.py"
+        output_path = REPO_ROOT / "addons" / "halloween-expansion" / "art" / "tilesets" / "haunted_tiles.png"
+
+        if output_path.exists():
+            output_path.unlink()
+
+        result = subprocess.run(
+            [sys.executable, str(script_path)],
+            cwd=REPO_ROOT,
+            capture_output=True,
+            text=True,
+            check=False,
+        )
+
+        self.assertEqual(result.returncode, 0, msg=result.stderr or result.stdout)
+        self.assertTrue(output_path.exists(), f"expected tileset output at {output_path}")
+
+        with Image.open(output_path) as image:
+            self.assertEqual(image.size, (128, 32))
+            self.assertEqual(image.mode, "RGBA")
 
 
 if __name__ == "__main__":

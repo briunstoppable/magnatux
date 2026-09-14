@@ -3,7 +3,10 @@
     (name "left")
     (fps 6)
     (hitbox 2 4 32 28)
-    (images "../art/enemies/webweaver_sheet.jpg")
+    (images
+      "../art/enemies/webweaver/frames/crawl-0.png"
+      "../art/enemies/webweaver/frames/crawl-1.png"
+    )
   )
 
   (action
@@ -15,13 +18,16 @@
     (name "spit-web")
     (fps 0)
     (hitbox 2 4 32 28)
-    (images "../art/enemies/webweaver_sheet.jpg")
+    (images
+      "../art/enemies/webweaver/frames/spit-web-0.png"
+      "../art/enemies/webweaver/frames/spit-web-1.png"
+    )
   )
 
   (action
     (name "defeated")
     (fps 0)
     (hitbox 2 4 32 28)
-    (images "../art/enemies/webweaver_sheet.jpg")
+    (images "../art/enemies/webweaver/frames/defeated.png")
   )
 )
