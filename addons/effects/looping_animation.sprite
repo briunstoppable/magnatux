@@ -1,0 +1,10 @@
+(supertux-sprite
+  (action
+    (name "walking")
+    (fps 10)
+    (images
+      "frame-01.png"
+      "frame-02.png"
+    )
+  )
+)

@@ -1,0 +1,8 @@
+(supertux-sprite
+  (action
+    (name "drift")
+    (fps 6)
+    (hitbox 4 4 24 32)
+    (images "../art/enemies/wailing_phantoms_sheet.jpg")
+  )
+)

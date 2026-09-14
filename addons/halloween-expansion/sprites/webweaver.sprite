@@ -1,0 +1,27 @@
+(supertux-sprite
+  (action
+    (name "left")
+    (fps 6)
+    (hitbox 2 4 32 28)
+    (images "../art/enemies/webweaver_sheet.jpg")
+  )
+
+  (action
+    (name "right")
+    (mirror-action "left")
+  )
+
+  (action
+    (name "spit-web")
+    (fps 0)
+    (hitbox 2 4 32 28)
+    (images "../art/enemies/webweaver_sheet.jpg")
+  )
+
+  (action
+    (name "defeated")
+    (fps 0)
+    (hitbox 2 4 32 28)
+    (images "../art/enemies/webweaver_sheet.jpg")
+  )
+)

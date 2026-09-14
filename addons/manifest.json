@@ -1,0 +1,73 @@
+{
+  "version": 1,
+  "assetSets": [
+    {
+      "name": "base-snortle",
+      "kind": "enemy",
+      "sprite": "enemies/snortle.sprite",
+      "requiredFiles": [
+        "enemies/snortle/base_snortle_sheet.jpg",
+        "enemies/snortle/frames/crawl-0.png",
+        "enemies/snortle/frames/crawl-1.png",
+        "enemies/snortle/frames/windup.png",
+        "enemies/snortle/frames/fire.png",
+        "enemies/snortle/frames/squished.png"
+      ]
+    },
+    {
+      "name": "ice-snortle",
+      "kind": "enemy",
+      "sprite": "enemies/ice_snortle.sprite",
+      "requiredFiles": [
+        "enemies/ice_snortle/ice_snortle_sheet.jpg",
+        "enemies/ice_snortle/frames/ice-snortle-crawl-0.png",
+        "enemies/ice_snortle/frames/ice-snortle-crawl-1.png",
+        "enemies/ice_snortle/frames/ice-snortle-windup.png",
+        "enemies/ice_snortle/frames/ice-snortle-fire.png",
+        "enemies/ice_snortle/frames/ice-snortle-squished.png"
+      ]
+    },
+    {
+      "name": "projectile-template",
+      "kind": "projectile",
+      "sprite": "projectiles/projectile.sprite",
+      "requiredFiles": [
+        "projectiles/projectile.sprite"
+      ]
+    },
+    {
+      "name": "looping-animation-template",
+      "kind": "effect",
+      "sprite": "effects/looping_animation.sprite",
+      "requiredFiles": [
+        "effects/looping_animation.sprite"
+      ]
+    },
+    {
+      "name": "halloween-expansion",
+      "kind": "expansion",
+      "spriteDir": "halloween-expansion/sprites",
+      "requiredSprites": [
+        "arachnia_boss.sprite",
+        "ghost_blue.sprite",
+        "ghost_green.sprite",
+        "ghost_white.sprite",
+        "jackolantern_powerup.sprite",
+        "phantom_bat.sprite",
+        "pumpkin_tux.sprite",
+        "underworld_imp.sprite",
+        "webweaver.sprite"
+      ],
+      "requiredFiles": [
+        "halloween-expansion/art/bosses/arachnia_boss_sheet.jpg",
+        "halloween-expansion/art/enemies/phantom_bat_sheet.jpg",
+        "halloween-expansion/art/enemies/underworld_imp_sheet.jpg",
+        "halloween-expansion/art/enemies/wailing_phantoms_sheet.jpg",
+        "halloween-expansion/art/enemies/webweaver_sheet.jpg",
+        "halloween-expansion/art/powerups/jackolantern_powerup_and_pumpkin_tux.jpg",
+        "halloween-expansion/art/reference/phantom_bat_legacy_sheet.jpg",
+        "halloween-expansion/art/reference/ice_snortle_legacy_sheet.jpg"
+      ]
+    }
+  ]
+}

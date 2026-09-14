@@ -1,0 +1,8 @@
+(supertux-sprite
+  (action
+    (name "default")
+    (fps 0)
+    (hitbox 0 0 32 32)
+    (images "../art/powerups/jackolantern_powerup_and_pumpkin_tux.jpg")
+  )
+)

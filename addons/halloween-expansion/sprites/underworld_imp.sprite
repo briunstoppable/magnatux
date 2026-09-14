@@ -1,0 +1,22 @@
+(supertux-sprite
+  (action
+    (name "taunt-run")
+    (fps 8)
+    (hitbox 2 4 28 32)
+    (images "../art/enemies/underworld_imp_sheet.jpg")
+  )
+
+  (action
+    (name "leap-dive")
+    (fps 8)
+    (hitbox 2 4 28 32)
+    (images "../art/enemies/underworld_imp_sheet.jpg")
+  )
+
+  (action
+    (name "defeated")
+    (fps 0)
+    (hitbox 2 4 28 32)
+    (images "../art/enemies/underworld_imp_sheet.jpg")
+  )
+)

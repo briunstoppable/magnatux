@@ -1,0 +1,8 @@
+(supertux-sprite
+  (action
+    (name "default")
+    (fps 0)
+    (hitbox 0 0 12 12)
+    (images "projectile.png")
+  )
+)

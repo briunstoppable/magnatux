@@ -1,0 +1,54 @@
+(supertux-sprite
+  ;; Crawling left
+  (action
+    (name "left")
+    (fps 8)
+    (hitbox 2 4 32 28)
+    (images
+      "crawl-0.png"
+      "crawl-1.png"
+    )
+  )
+  
+  (action
+    (name "right")
+    (mirror-action "left")
+  )
+  
+  ;; Winding up to shoot (pauses movement)
+  (action
+    (name "windup-left")
+    (hitbox 2 4 32 28)
+    (images "windup.png")
+  )
+  
+  (action
+    (name "windup-right")
+    (mirror-action "windup-left")
+  )
+  
+
+  ;; Firing frame
+  (action
+    (name "fire-left")
+    (hitbox 2 4 32 28)
+    (images "fire.png")
+  )
+  
+  (action
+    (name "fire-right")
+    (mirror-action "fire-left")
+  )
+
+  ;; Defeated state
+  (action
+    (name "squished-left")
+    (hitbox 2 16 32 16)
+    (images "squished.png")
+  )
+  
+  (action
+    (name "squished-right")
+    (mirror-action "squished-left")
+  )
+)

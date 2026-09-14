@@ -1,0 +1,36 @@
+(supertux-sprite
+  (action
+    (name "phase1-hanging")
+    (fps 6)
+    (hitbox 8 8 64 64)
+    (images "../art/bosses/arachnia_boss_sheet.jpg")
+  )
+
+  (action
+    (name "phase1-rearing")
+    (fps 6)
+    (hitbox 8 8 64 64)
+    (images "../art/bosses/arachnia_boss_sheet.jpg")
+  )
+
+  (action
+    (name "phase2-lunge")
+    (fps 8)
+    (hitbox 8 8 64 64)
+    (images "../art/bosses/arachnia_boss_sheet.jpg")
+  )
+
+  (action
+    (name "phase2-slam")
+    (fps 0)
+    (hitbox 8 8 64 64)
+    (images "../art/bosses/arachnia_boss_sheet.jpg")
+  )
+
+  (action
+    (name "defeated")
+    (fps 0)
+    (hitbox 8 8 64 64)
+    (images "../art/bosses/arachnia_boss_sheet.jpg")
+  )
+)

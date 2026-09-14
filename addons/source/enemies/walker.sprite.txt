@@ -1,0 +1,32 @@
+(supertux-sprite
+  ;; Walking left animation
+  (action
+    (name "left")
+    (fps 6)
+    (hitbox 2 2 32 32)
+    (images
+      "walk-0.png"
+      "walk-1.png"
+    )
+  )
+  
+  ;; Walking right (automatically mirrors the left action to save art time)
+  (action
+    (name "right")
+    (mirror-action "left")
+  )
+  
+  ;; Squished state when jumped on
+  (action
+    (name "squished-left")
+    (hitbox 2 16 32 16)
+    (images
+      "squished.png"
+    )
+  )
+  
+  (action
+    (name "squished-right")
+    (mirror-action "squished-left")
+  )
+)
